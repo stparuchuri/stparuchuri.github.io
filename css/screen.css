@@ -1,0 +1,21 @@
+/* CSS Document for Screens*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Arvo:700);
+
+/*global parameters*/ 
+
+body { font-family: "Courier New", Monospace; font-size:16px; font-weight:300; color:#000; margin:2; padding:10}
+nav { font-family: 'Arvo', serif; align:"top";}
+
+#page {max-width: 1500px;}
+
+a {color:#007eff; text-decoration:none;}
+a:visited{color:#65b1ff;}
+
+/* Specific paramteres */
+body div.section-headings {margin: 0 0 1.5em 0; font-family: 'Lobster', cursive; font-size: 1.0em; font-weight:700; }
+body div.content-news {margin: 0 0 0 0; font-size:0.8em; font-weight:700;}
+body div.publications {font-size:0.8em;}
+body div.project {font-size:0.8em; font-weight:bold;}
