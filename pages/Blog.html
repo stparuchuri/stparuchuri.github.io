@@ -1,6 +1,9 @@
 <!DOCTYPE PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
-<html>	
+<html>
+<meta http-equiv=“Pragma” content=”no-cache”>
+<meta http-equiv=“Expires” content=”-1″>
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>	
 <!-- HEAD -->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,7 +19,7 @@
 		<table class="leftNavTable">
 			<tbody>
 				<tr class="leftNavDataCell" > <td> <a href="../index.html"> <span>&#8226;</span> Home </a> </td> </tr>
-				<tr class="leftNavDataCell" > <td> <a href="#"> <span>&#8226;</span> Publications</a> </td> </tr>
+				<tr class="leftNavDataCell" > <td> <a href="../pages/Publications.html"> <span>&#8226;</span> Publications</a> </td> </tr>
 				<tr class="leftNavDataCell" > <td> <a href="../pages/Projects.html"> <span>&#8226;</span> Projects</a> </td> </tr>
 				<tr class="leftNavDataCell" > <td> <a href="../pages/Articles.html"> <span>&#8226;</span> Articles</a> </td> </tr>
 				<tr class="leftNavDataCell" > <td> <a href="../pages/Blog.html"> <span>&#8226;</span> Blog</a> </td> </tr>
@@ -28,32 +31,44 @@
 	
 	<!-- RIGHT BODY/CONTENT --->
 	<div class="ContentDiv">
-		<div class="publicationsContainer">
-		<p class="sectionHeadings"> Publications </p>
-			<ul class="publications">
-				
-				<li>E. E. Tsiropoulou, A. Thanou, <b>S.T. Paruchuri</b>, and S. Papavassiliou, &#34Self-Organizing Museum
-				Visitor Communities: A Participatory Action Research based Approach&#34,<i>The 12th International Workshop 
-				on Semantic and Social Media Adaptation and Personalization (SMAP 2017)</i>,Bratislava, Slovakia, July, 2017.
-				<a href="../files/publications/smap_17.pdf" style="text-decoration:none;"> <b>here</b> </a>
-				</li> </br>
+		<!-- BLOG -->
+		<script type="text/javascript" src="../javascript/BlogMain.js"> </script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+		
+		<div class="blogContainer">
+			<p class="sectionHeadings"> My Professional Blog </p>
 			
+			<!-- TOP Blog Navigation Bar -->
+			<div class="blogNavigation">
+				<table class="blogNavigationTable">
+					<tbody>
+						<tr>
+							<td class="blogNavNewerPost"> <button class="button" onclick="displayNewerPost()" title="Newer">&#8592; Newer </button> </td>
+							<td class="blogNavIndex"> <button class="button" onclick="displayIndex()" title="index">Index</button> </td>
+							<td class="blogNavOlderPost"> <button class="button" onclick="displayOlderPost()" title="Older">Older &#8594;</button> </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			
-				<li>E. E. Tsiropoulou, <b>S.T. Paruchuri</b>, and J.S. Baras, &#34Interest, Energy and Physical-Aware
-					Colaition formation and Resource Allocation in Smrt IoT Applications&#34,<i>51st Conference on Information
-				 Sciences and Systems (CISS 2017)</i>,Johns Hopkins University, Baltimore, MD, March, 2017.
-				<a href="../files/publications/ciss_17.pdf" style="text-decoration:none;"> <b>here</b> </a>
-				</li> </br>
-
-				<li>H. Dagale, S. V. R. Anand, M. Hegde, N. Purohit, M. K. Supreeth, G. S. Gill, 
-					V. Ramya, A. Shastry, S. Narasimman, Y. S. Lohith, and <b>P. Surya</b>, &#34 CyPhyS+: A 
-					Reliable and Managed Cyber-Physical System for Old-Age Home Healthcare over a 
-				6LoWPAN Using Wearable Motes &#34,<i>2015 IEEE International Conference on Services Computing (SCC)</i>, 
-				New York, June, 2015, pp. 309 &#45 316.
-				<a href="../files/publications/cyphys_15.pdf" style="text-decoration:none;"> <b>here</b> </a>
-				</li>
-				
-			</ul>
+			<!-- POST -->
+			<div id="blogContent">
+			
+			</div>
+			
+			<!-- BOTTOM Blog Navigation Bar -->
+			<div class="blogNavigation">
+				<table class="blogNavigationTable">
+					<tbody>
+						<tr>
+							<td class="blogNavNewerPost"> <button class="button" onclick="displayNewerPost()" title="Newer">&#8592; Newer </button> </td>
+							<td class="blogNavIndex"> <button class="button" onclick="displayIndex()" title="index">Index</button> </td>
+							<td class="blogNavOlderPost"> <button class="button" onclick="displayOlderPost()" title="Older">Older &#8594;</button> </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
 		</div>
 	</div>
 	

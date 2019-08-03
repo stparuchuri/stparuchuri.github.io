@@ -1,21 +1,386 @@
-/* CSS Document for Screens*/
+/* Main CSS file for my webpage
+	Author: Surya Paruchuri
+	(c) Surya Paruchuri - Present.
+	
+	A suporting documentation for my fture reference (so I don'table
+	have to refer back to w3schools.com website repeatedly):
+	
+	- Basic CSS:
+		- Syntax: Selector {Declaration1; Declaration2;}
+		- Exmple: p { color: red; text-align:center; }
+		- Comment in a CSS file: use 'C' language multi-line style;
+		- CSS Styling can be done in EXTERNAL (like this one) or INTERNAL
+			as in copy paste the entire file in head section or INLINE
+			within the element attributes.
+		- NOTE: If multiple style rule-sets are defined for the same 
+			selector, then the latest one will be applied.
+		- Priority of styling for an Element:
+			- INLINE
+			- EXTERNAL and INTERNAL css files
+			- Browser default
+		
+	- Selector informs on which elements of website should the declaration
+		inside this rule-set be applied on. The selector can be 
+		described in CSS using either of the following approaches
+		- Name:
+			- Example: p { color: red; }  %%% Comment: here "p" is the 
+		- Id: 
+			- Uses id attribute of an element to delineate the element
+			- Id must be unique to the element in HTML.
+			- Syntax: #<Unique_ID> { Declaration; }
+			- Ex: #para1 { color: red; }	%%% Comment will be applied to 
+		
+		- Class: 
+			- Applies to all elements of a specific class type.
+			- Generic Syntax: .<Class_ID> { Declaration1; }
+			- Generic Ex: .center { text-align: center; color:red; }
+			- Specific Syntax (for only Specific 
+				Elements be affected by a class}: 
+				<HTML_ELEMENT_TYPE>.<Class_ID> { Declaration1; }
+			- Specific Syntax Ex: p.center { color:red; }
+			- Note: A HTML Element can be styled using multiple 
+				classes too
+				- Ex: <p class="center large"> Example Para </p>
+		
+		- Child Selectors:
+			- provides a way to select elements that fall within one 
+				another, which are done wither as:
+					- Descendent Selectors
+						- Applies to anything that falls withing parent
+							tree's structure.
+						- Syntax: <parent> <child_selector> {}
+					- Direct child Selectors
+						- Applies to only those that fall immediately within
+							the parent's element.
+						- Syntax: <parent> ">" <child_selector> {} 
+								%%% Comment: The above syntax has > in 
+									between Parent and Child_Selector.
+		
+				
+		- Attribute:
+		
+		- Grouping multiple Element rule-set with same declarations, they
+			can be grouped to have a single rule-set applicable for all
+			instead of multiple ones in CSS file.
+			- Ex: h1 {color:red; text-align: center; } h2 {color:red; text-align: center; }
+				   Can be written as shown below:
+				  h1,h3 {color:red; text-align: center; }
+	
+	- Declaration informs both the property name and value assigned, both
+		separated by a colon. Multiple Declarations in a rule-set are 
+		separated by a semi-colon;
+		-  Example: color: red; text-align: center;
+		- NOTE: Never add space between property value and property units
+			as in "20px" is correct format while "20 px" is incorrect.
+	
+	- Some notes on properties for declarations:
+		- Color property values in Declarations can be defined as 
+			rgb(<0-255>,<0-255>,<0-255>) or hexadecimal values
+		- border-style property can have values: dotted, dashed, solid, double,
+			groove, ridge, inset, 
+		- Margins property can be set on all sides independently as shown:
+			- margin-top, margin-bottom, margin-left, margin-right
+			- Also a short hand for all margins as:
+				- "margin: <top_px> <right_px> <bottom_px> <left_px>
+			- units: % as width of container, px, pt, cm etc,
+		- Padding Property is similar to Margin:
+			padding-top, padding-bottom,padding-left,padding-right.
+		- Height and Width:
+			- height and width of a div can be set.
+			- Ex: 
+	
+	Document Version:
+	- v1.1
+		- Updated CSS along with all website files while transitioning to
+			DOM for website and while adding blog to website
+*/
 
 
+
+/* Import resoures */
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 @import url(https://fonts.googleapis.com/css?family=Arvo:700);
 
-/*global parameters*/ 
-
-body { font-family: "Courier New", Monospace; font-size:16px; font-weight:300; color:#000; margin:2; padding:10}
-nav { font-family: 'Arvo', serif; align:"top";}
-
-#page {max-width: 1500px;}
+/* Global links rule-sets */
+html,body
+{
+	height:100%;
+	width:100%;
+}
 
 a {color:#007eff; text-decoration:none;}
 a:visited{color:#65b1ff;}
 
-/* Specific paramteres */
-body div.section-headings {margin: 0 0 1.5em 0; font-family: 'Lobster', cursive; font-size: 1.0em; font-weight:700; }
-body div.content-news {margin: 0 0 0 0; font-size:0.8em; font-weight:700;}
-body div.publications {font-size:0.8em;}
-body div.project {font-size:0.8em; font-weight:bold;}
+/* Generic Settings CSS */
+p.sectionHeadings
+{
+	margin: 0 0 1.5em 0;
+	font-family: 'Lobster', cursive;
+	font-size: 1.0em;
+	font-weight:bold;
+	text-align:center;
+}
+
+p.content
+{
+	text-align:left;
+}
+
+p.indexContent
+{
+	text-align:center;
+}
+
+body button.button
+{
+	font-size: 12px;
+	border-radius: 3px;
+	transition-duration: 0.4s;
+	background-color: white;
+	color: grey;
+	border: 2px solid #E6E6FA;
+}
+
+body button:hover {
+	background-color: white; 
+	color: black;
+}
+
+footer
+{
+	height:5%;
+	width:85%;
+	float:right;
+	border:0;
+	vertical-align:bottom;
+	text-align:center;
+	color: grey;
+	text-shadow: 0px 0px grey;
+	font-size:16px; 
+	font-weight:300;
+	z-index:2;
+	position:relative;
+}
+
+
+/* Navigation rule-sets */
+body div.LeftNavBar 
+{
+	position:fixed;
+	z-index:1;
+	float:left;
+	width: 15%;
+	height:100%;
+	background-color:#E6E6FA;
+	font-family: 'Arvo',serif; 
+	text-align:left;
+	vertical-align: center;
+	padding: 0% 0% 0% 2%;
+	border-radius:5px;
+	font-size:14px; 
+	font-weight:200;
+	margin: 0% 0% 0% 0%;
+}
+
+body table.leftNavTable
+{
+	width:100%;
+	border:0;
+	vertical-align:center;
+	text-align:left;
+	font-size:14px; 
+	font-weight:200;
+	margin: 0% 0% 0% 0%;
+	padding: 10% 0% 0% 0%;
+}
+
+body tr.leftNavDataCell
+{
+	margin: 0% 0% 0% 0%;
+}
+
+/* Right Content DOM CSS */
+body div.ContentDiv
+{
+	z-index:1;
+	float:Right;
+	width: 80%;
+	height:100%;
+	background-color:#FFFFFF;
+	font-family: "Courier New", Monospace; 
+	text-align:center;
+	vertical-align:center;
+	font-size:16px; 
+	font-weight:300;
+	position:relative;
+	margin: 2% 0% 0% 0%;
+}
+
+/* Home Page CSS */
+body table.homeContactTable
+{
+	position:relative;
+	height:20%;
+	width:40%;
+	border:0;
+	vertical-align:bottom;
+	text-align:left;
+	font-size:16px; 
+	font-weight:300;
+	margin: 0% 0% 0% 0%;
+}
+body table.homeContactTable td
+{
+	height: 2.5%;
+	text-align:center;
+}
+
+body div.news
+{
+	text-align:left;
+	padding: 2% 0% 0% 0%;
+}
+body ul.researchIntersts
+{
+	text-align:left;
+	font-size:16px; 
+	font-weight:300;
+}
+
+/* pulications Page CSS */
+body ul.publications
+{
+	text-align:left;
+	font-size:16px; 
+	font-weight:300;
+	text-align:left;
+}
+body div.publicationsContainer
+{
+	padding: 2% 2% 0% 0%;
+}
+/* Projects Page CSS */
+body table.projects
+{
+	padding: 2% 2% 0% 0%;
+}
+body div.projectsTypeContainer
+{
+	text-align:left;
+	font-size:16px; 
+	font-weight:300;
+	text-align:left;
+	padding: 2% 2% 0% 0%;
+}
+
+/* Articles Page CSS */
+body div.articlesTypeContainer
+{
+	text-align:left;
+	font-size:16px; 
+	font-weight:300;
+	text-align:left;
+	padding: 2% 2% 0% 0%;	
+}
+body ul.articlesList
+{
+	text-align:left;
+	font-size:16px; 
+	font-weight:300;
+	text-align:left;
+}
+
+/* Gallery Page CSS */
+body div.galleryContainer
+{
+	text-align:left;
+	font-size:16px; 
+	font-weight:300;
+	text-align:left;
+	padding: 2% 2% 0% 0%;		
+}
+
+/* Blog Specific CSS */
+body div.blogContainer
+{
+	text-align:left;
+	font-size:16px; 
+	font-weight:300;
+	text-align:left;
+	padding: 2% 2% 0% 0%;
+}
+
+body div.blogNavigation
+{
+	width:100%;
+	float:center;
+}
+body table.blogNavigationTable
+{
+	width:100%;
+	float:center;
+}
+body table.blogNavigationTable td
+{
+	width:33%;
+	float:center;
+	text-align:center;
+}
+
+body p.blogTitle
+{
+	font-family: "Courier New", Monospace; 
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration: underline;
+}
+
+body p.blogSection
+{
+	font-family: "Courier New", Monospace; 
+	text-align:left;
+	font-size:18px;
+	text-decoration: underline;
+}
+
+body p.blogSubsection
+{
+	font-family: "Courier New", Monospace; 
+	text-align:left;
+	font-size:14px;
+	font-weight:bold;
+	text-decoration: underline;
+}
+
+body p.blogContent
+{
+	font-size:14px;
+}
+
+body p.blogComment
+{
+	border:1;
+	vertical-align:bottom;
+	text-align:right;
+	color: grey;
+	text-shadow: 0px 0px grey;
+	font-size:14px; 
+	font-weight:300;
+	position:relative;
+	font-style: italic;
+}
+
+body p.blogTimestamp
+{
+	border:1;
+	vertical-align:bottom;
+	text-align:right;
+	color: grey;
+	text-shadow: 0px 0px grey;
+	font-size:12px; 
+	font-weight:300;
+	position:relative;
+	font-style: italic;
+}
+/*   ------ END of CSS ------ */

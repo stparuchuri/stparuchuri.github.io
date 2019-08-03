@@ -1,0 +1,34 @@
+<p class="blogTitle"> Phase of N phase shifted sinusoids <p>
+<p class="blogContent"> 
+	Last week while working through a problem, I came across 
+	a unique behaviour while working with addition of tones 
+	(these are not harmonics ) with different phase shift.</br></br>
+	
+	To give a brief description, I was adding tones 
+	(exponential – so the signal had both in-phase and 
+	quadrature phase components) – each with different phase 
+	offset. The end goal was to find the change in angle/phase
+	of product of summation of tones and a reference signal
+	with respect to reference signal. </br></br>
+	
+	During the experiment, my observations showed that the net 
+	angle/phase deviation from the original was the average of 
+	the phase deviation of the tones being added. Puzzled by 
+	the observations, I resorted to a quick MATLAB simulation 
+	to confirm this. My MATLAB model’s results matched with my 
+	observations. But I am still puzzled about the outcome. 
+	I need to investigate this at some point as this seems to 
+	be a quite interesting problem. </br></br>
+
+	In this context, I found that in general the following 
+	equation holds true:
+	
+	$$ tan^{-1}\lbrace\dfrac{sin \alpha_1 + sin \alpha_2 + \dots }
+	{cos \alpha_1 + cos \alpha_2 + \dots }\rbrace = \dfrac{\sum_i \alpha_i}{n}$$
+</p>
+<p class="blogTimestamp"> Friday August 02 2019 </p>
+<p class="blogComment"> 
+Note: this post was originally posted on my wordpress based
+blog on September 23 2018. This was later moved to this
+custom blog on the above date.
+</p>
