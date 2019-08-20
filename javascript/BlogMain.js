@@ -450,5 +450,7 @@ function renderAgain()
 		To do this in async way - as MathJax might be currently 
 		rendering a page- addEventListener it to MathJax's Job Queue.;
 	*/
-	MathJax.Hub.Queue(["Typeset",MathJax.Hub,"blogContent"]);	
+	MathJax.Hub.Queue(["Typeset",MathJax.Hub,"blogContent"]);
+	var ele = document.getElementsByClassName("footer");
+	ele[0].style.visibility = 'hidden';
 }
