@@ -3,6 +3,7 @@
 	[
 			{"PostHeading":"Welcome to my blog!", "page":"welcome.html", "path":"1/"},
 			{"PostHeading":"phase Of N Sinusoids", "page":"phaseOfNSinusoids.html", "path":"2/"},
-			{"PostHeading":"OTFS", "page":"otfs.html", "path":"3/"}
+			{"PostHeading":"OTFS", "page":"otfs.html", "path":"3/"},
+			{"PostHeading":"C++ Reference-Blog", "page":"cppBlog.html", "path":"4/"}
 	]
 }
