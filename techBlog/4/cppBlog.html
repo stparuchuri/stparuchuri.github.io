@@ -8,6 +8,18 @@
 <p class="blogTimestamp"> Monday January 13 2020 </p>
 <p class="blogSection"> Setting Thread Affinity - to pin a thread to a CPU </p>
 <p class="blogContent">
+	Setting the affinity allows us to precisely define on which CPU does a process or thread run. </br>	
 	
+	Even though C++ standard defines the Threading library to create a thread, synchronize them etc, thus
+	enforcing all compiler vendors to support namespace::std::thread's function, when we take a closer look,
+	std::thread's functions are only a wrapper for the compiler vendor's APIs. In case of
+	MSFT, Windows Threading API is just wrapped to the std::thread's functions defined in Spec, and in case 
+	of linux, if pThread is the underlying API, then std::thread is just a wrapper for pThread's APIs. </br>
+	
+	On Windows, we must use MSFT's Windows API. This includes including following header files: "windows.h".
+	Additionally, on Windows, one must enable process thread- since the thread affinity is allowed to be set to
+	only those CPUs, on which process Affinity is set.
 </p>
+<p class class="blogTimestamp" <a href="https://eli.thegreenplace.net/2016/c11-threads-affinity-and-hyperthreading/">
+https://eli.thegreenplace.net/2016/c11-threads-affinity-and-hyperthreading/ <a> </p>
 <p class="blogTimestamp"> Monday January 13 2020 </p>
