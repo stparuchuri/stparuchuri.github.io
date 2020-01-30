@@ -1,0 +1,40 @@
+<p class="blogTitle"> Software Engineering Advice to Myself </p>
+<p class="blogSection"> About this series of posts </p>
+<p class="blogContent">
+	In this series of blog posts, I shall document the mistakes I made
+	while developing relatively large professional projects (both at a 
+	for-profit corporate and open-source projects).
+</p>
+<p class="blogTimeStamp"> January 29 2020 </p>
+<p class="blogSection"> Premature optimization is the root of all evil </p>
+<p class="blogContent">
+	As the title of the section says and per Donald Knuth's advice, avoid
+	code optimizations during initial stages of project. NOTE, I am talking
+	about code/implementation optimizations, not design optimizations. 
+	It is always best to have something working first and then expand on it
+	or optimize it later on.
+	
+	Design/Architecture optimization on the other hand is required to be done
+	before implementation, else it would result in massive refracting and 
+	reorganizing of code. 
+	
+	As an example, if multiple components are required to be implemented, then don't
+	try to seggregate members and member functions into public or private initially,
+	but ave everything under public (except the obvious ones). Once the class works as
+	expected, then worry about correct abstraction of class.
+</p>
+<p class="blogSection"> choose a preferred language for initial implementation </p>
+<p class="blogContent">
+	For initial implementation, always choose an easier language to implement over a 
+	tougher one.
+</p>
+<p class="blogSection"> Don't be scared to change (existing) implementations </p>
+<p class="blogContent">
+	Don't be scared to change the already written code. This is more or less expected
+	all the time. Version Control is your friend here.
+</p>
+<p class="blogSection"> Create a standalone application initially and then integrate it </p>
+<p class="blogContent">
+
+</p>
+<p class="blogTimeStamp"> January 29 2020 </p>
