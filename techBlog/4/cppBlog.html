@@ -19,7 +19,44 @@
 	On Windows, we must use MSFT's Windows API. This includes including following header files: "windows.h".
 	Additionally, on Windows, one must enable process thread- since the thread affinity is allowed to be set to
 	only those CPUs, on which process Affinity is set.
+	
+	References: 
+	<a href="https://eli.thegreenplace.net/2016/c11-threads-affinity-and-hyperthreading/">
+	https://eli.thegreenplace.net/2016/c11-threads-affinity-and-hyperthreading/ <a> 
 </p>
-<p class class="blogTimestamp" <a href="https://eli.thegreenplace.net/2016/c11-threads-affinity-and-hyperthreading/">
-https://eli.thegreenplace.net/2016/c11-threads-affinity-and-hyperthreading/ <a> </p>
 <p class="blogTimestamp"> Monday January 13 2020 </p>
+
+<!-- Next Post -->
+<p class="blogSection"> sizeof(struct) != structure's real memory footprint </p>
+<p class="blogContent">
+
+	It is important to note that sizeof() returns the actual size to which the compiler compiles the given structure definition which
+	need <b> NOT</b> be the same as the sum of sizes of all elements's data types. This is because the compiles aligns the fields by padding
+	dummy bytes as programs cannot access a single byte if used inside a structure on any processor which fetches more tha a single byte at time
+	from memory. And as you guessed, this alignment is compiler specific.
+	
+	<b> Example:</b> If the structure is defined, stored and used only in memory, then it wouldn't raise any issues since, all compiler definitions
+	are the same - have the padding information, while it be reading from memory or writing to memory etc. But this is especailly gets grose, when 
+	strucures definitions operate across different mediums. Such as writer (any program) writes data of strucute to a file on a byte by byte basis, and
+	a reader uses the same header file definition of structure writer used (but compiles on a different compiler) on a function that reads the data 
+	fromthe file. Since the writer and reader compilers are different, there could be a case when the compiler's padding might not match between reader and 
+	writer's compilerf for same structure definition even if using same header file in both the casses.
+References: 
+<a href="https://stackoverflow.com/questions/119123/why-isnt-sizeof-for-a-struct-equal-to-the-sum-of-sizeof-of-each-member">
+Stack Overflow post.<a>
+<a href="http://www.c-faq.com/struct/align.html">
+c-faq thread<a>
+</p>
+<p class="blogTimestamp"> Monday February 17 2020 </p>
+
+<!-- Next Post -->
+<p class="blogSection"> ":" operator inside struct</p>
+<p class="blogContent">
+
+
+
+References: 
+<a href="https://stackoverflow.com/questions/3983943/colons-after-variable-name-in-c">
+Stack Overflow post.<a>
+</p>
+<p class="blogTimestamp"> Monday February 17 2020 </p>
