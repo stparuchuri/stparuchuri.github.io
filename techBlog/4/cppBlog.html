@@ -41,11 +41,17 @@
 	a reader uses the same header file definition of structure writer used (but compiles on a different compiler) on a function that reads the data 
 	fromthe file. Since the writer and reader compilers are different, there could be a case when the compiler's padding might not match between reader and 
 	writer's compilerf for same structure definition even if using same header file in both the casses.
+	
+	The issue of struct's size arising due to compiler's alignment effort by padding the structure can be excluded in a blanket way by setting the compiler flag
+	to use 1 byte (or what ever in your case) as the default alignment. The other approach is to set it on a per variable/declaration basis in code 
+	using compilers directives  or alignas keyword. <b> NOTE: </b> alignas can only be used to increase the alignment and not decares from compiler's 
+	default values, whereas #pragmas {#pargma pack() // in case of MSFT c++ compiler} can be used to decrease as well.
+	
 References: 
 <a href="https://stackoverflow.com/questions/119123/why-isnt-sizeof-for-a-struct-equal-to-the-sum-of-sizeof-of-each-member">
-Stack Overflow post.<a>
+Stack Overflow post.</a>
 <a href="http://www.c-faq.com/struct/align.html">
-c-faq thread<a>
+c-faq thread</a>
 </p>
 <p class="blogTimestamp"> Monday February 17 2020 </p>
 
@@ -57,6 +63,6 @@ c-faq thread<a>
 
 References: 
 <a href="https://stackoverflow.com/questions/3983943/colons-after-variable-name-in-c">
-Stack Overflow post.<a>
+Stack Overflow post.</a>
 </p>
 <p class="blogTimestamp"> Monday February 17 2020 </p>
